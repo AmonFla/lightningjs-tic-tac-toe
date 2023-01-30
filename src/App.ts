@@ -1,4 +1,5 @@
 import { Lightning, Utils } from '@lightningjs/sdk'
+import Splash from './Splash.js'
 
 export default class App extends Lightning.Component {
   static getFonts() {
@@ -11,6 +12,11 @@ export default class App extends Lightning.Component {
       color: 0xff000000,
       w: 1920,
       h: 1080,
+      Splash: {
+        type: Splash,
+        signals: { loaded: true },
+        aplha: 0,
+      },
     }
   }
 
