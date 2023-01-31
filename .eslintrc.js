@@ -5,15 +5,8 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'prettier'],
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'prettier',
-  ],
+  plugins: ['prettier'],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'prettier'],
   rules: {
     quotes: [2, 'single', 'avoid-escape'],
     semi: [2, 'never'],
@@ -25,7 +18,6 @@ module.exports = {
         argsIgnorePattern: 'res|next|^err',
       },
     ],
-    '@typescript-eslint/no-non-null-assertion': 'off',
     'prettier/prettier': [
       'error',
       {

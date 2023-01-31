@@ -3,7 +3,6 @@
   "editor.formatOnPaste": true,
   "eslint.validate": [
     "javascript",
-    "typescript"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
