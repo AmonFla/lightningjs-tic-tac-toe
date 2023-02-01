@@ -72,14 +72,14 @@ export default class Game extends Lightning.Component {
     this._tiles = ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e']
 
     //force render
-    this.renderHeight(this._tiles)
+    this.render(this._tiles)
 
     //change back to rootstate
     this._setState('')
   }
 
   render(tiles) {
-    this.tag('Makers').children = tiles.map((el, idx) => {
+    this.tag('Markers').children = tiles.map((el, idx) => {
       return {
         x: (idx % 3) * 300 + 110,
         y: ~~(idx / 3) * 300 + 90,
@@ -90,8 +90,8 @@ export default class Game extends Lightning.Component {
 
   _handleUp() {
     let idx = this._index
-    if (idx + 3 <= this._tiles.length - 1) {
-      this._setIndex(idx + 3)
+    if (idx - 3 >= 0) {
+      this._setIndex(idx - 3)
     }
   }
 
@@ -211,8 +211,8 @@ export default class Game extends Lightning.Component {
                       text: `${
                         winner === 'X' ? 'Player' : 'Computer'
                       } wins (press enter to continue)`,
-                      smooth: { alpha: 1 },
                     },
+                    smooth: { alpha: 1 },
                   },
                 })
               }
